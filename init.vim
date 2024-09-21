@@ -53,7 +53,7 @@ map  <leader>f <Plug>(easymotion-bd-f)
 :set guifont=*
 
 set background=dark
-colorscheme deus
+colorscheme sonokai
 
 let g:fmt_command={ 'go': 'gofmt -w'}
 
