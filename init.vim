@@ -6,6 +6,9 @@
 :set smarttab
 :set softtabstop=4
 :set mouse=a
+:set scrolloff=15
+:set clipboard="unnamedplus"
+:set cursorline
 
 let mapleader=' '
 
@@ -39,21 +42,28 @@ set encoding=UTF-8
 call plug#end()
 
 
+" NERDTree
 nnoremap <C-f> :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
+
 nnoremap <C-l> :call CocActionAsync('jumpDefinition')<CR>
-nnoremap <C-a> :Telescope find_files<CR>
+" Telescope 
+nnoremap <C-a> :lua require'telescope.builtin'.resume{}<CR>
+nnoremap <leader>ss :Telescope find_files<CR>
+nnoremap <leader>sg <cmd>Telescope live_grep<CR>
 
 nmap <F8> :TagbarToggle<CR>
 map  <leader>f <Plug>(easymotion-bd-f)
+imap jk <Esc>
+imap kj <Esc>
 
 :set completeopt-=preview " For No Previews
 
 :set guifont=*
 
 set background=dark
-colorscheme deus
+colorscheme neofusion
 
 let g:fmt_command={ 'go': 'gofmt -w'}
 
